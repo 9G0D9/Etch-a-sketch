@@ -1,6 +1,14 @@
+const DEFAULT_VALUE = 16;
+
+let currentSize = DEFAULT_VALUE;
+
 let myGrid = document.querySelector(".grid");
 let rows = document.getElementsByClassName("rows");
 let cols = document.getElementsByClassName("cols");
+
+function setCurrentSize(newSize) {
+  currentSize = newSize;
+}
 
 function makeRow(rowNum) {
   for (let i = 0; i < rowNum; i++) {
@@ -22,16 +30,35 @@ function makeCol(colNum) {
 
 let sizeSlider = document.getElementById("sizeSlider");
 let sizeValue = document.getElementById("sizeValue");
+let clearBtn = document.getElementById("clearBtn");
 
 sizeSlider.onmousemove = (e) => updateSizeValue(e.target.value);
 sizeSlider.onchange = (e) => changeSize(e.target.value);
+clearBtn.onclick = () => reloadGrid();
 
 function updateSizeValue(value) {
   sizeValue.innerHTML = `${value} X ${value}`;
 }
 
 function changeSize(value) {
-  myGrid.innerHTML = "";
+  setCurrentSize(value);
+  reloadGrid(currentSize);
+}
+
+function reloadGrid() {
+  clearGrid();
+  creategrid(currentSize);
+}
+
+function creategrid(value = currentSize) {
   makeRow(value);
   makeCol(value);
 }
+
+function clearGrid() {
+  myGrid.innerHTML = "";
+}
+
+
+
+window.onload = () => changeSize(DEFAULT_VALUE);
