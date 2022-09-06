@@ -111,10 +111,20 @@ let mouseDown = false;
 document.body.onmousedown = () => (mouseDown = true);
 document.body.onmouseup = () => (mouseDown = false);
 
+function getRandomColor() {
+  return Math.floor(Math.random() * 256);
+}
+
 function changeColor(e) {
   if (e.type === "mouseover" && !mouseDown) return;
-
-  e.target.style.backgroundColor = currentColor;
+  if (currentMode == "color") {
+    e.target.style.backgroundColor = currentColor;
+  } else if (currentMode == "eraser") {
+    e.target.style.backgroundColor = "#fff";
+  }
+  else if (currentMode=='rainbow'){
+    e.target.style.backgroundColor = `rgb(${getRandomColor()},${getRandomColor()},${getRandomColor()})`;
+  }
 }
 
 window.onload = () => changeSize(DEFAULT_VALUE);
