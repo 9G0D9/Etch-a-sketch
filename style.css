@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Righteous&display=swap");
 * {
   box-sizing: border-box;
   margin: 0;
@@ -10,17 +11,19 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
+  background-color: #967e76;
 }
-h1{
- margin-bottom: 50px;
+h1 {
+  margin-bottom: 50px;
+  font-family: "Righteous", cursive;
 }
 
 .container {
   display: flex;
   width: 70vw;
   height: 80vh;
-  border: 2px solid black;
-  background-color: aquamarine;
+  background-color: #b7c4cf;
+  border-radius: 50px;
 }
 
 .edits {
@@ -29,13 +32,21 @@ h1{
   flex-direction: column;
   width: 50wv;
   height: 100%;
-  background-color: red;
+  background-color: #eee3cb;
   justify-content: center;
   align-items: center;
   gap: 10%;
+  border-radius: 50px 0 0 50px;
 }
-*.grid-container{
-  padding:3%;
+
+.size{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.grid-container {
+  padding: 3%;
 }
 .grid {
   width: 45vw;
@@ -45,7 +56,7 @@ h1{
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border: 1px solid gray;
+  border: 1px solid #967e76;
 }
 
 .rows {
@@ -62,13 +73,29 @@ h1{
   user-select: none;
 }
 
-.active{
-  background-color: black;
+.active {
+  background-color: #D7C0AE;
   color: white;
 }
 
-button{
+button {
   width: 50%;
   padding: 2%;
   border-radius: 10px;
+}
+
+input[type='color']{
+  border-radius: 100px;
+  border: none;
+  width: 30px;
+  -webkit-appearance: none;
+}
+input[type='color']::-webkit-color-swatch-wrapper {
+  padding: 0;
+}
+
+input[type='color']::-webkit-color-swatch {
+  border: none;
+  border-radius: 50px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
