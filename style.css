@@ -1,0 +1,27 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  display: flex;
+  width: 80vw;
+  height: auto;
+}
+
+.edits {
+  flex: auto;
+  display: flex;
+  flex-direction: column;
+  width: 25vw;
+  height: 100px;
+  background-color: red;
+}
+
+.grid {
+  flex: auto;
+  background-color: blue;
+  height: 100px;
+  width: 55vw;
+}
