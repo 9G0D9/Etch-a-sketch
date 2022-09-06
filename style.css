@@ -1,36 +1,52 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 100vh;
 }
 
 .container {
   display: flex;
   width: 80vw;
-  height: auto;
+  height: 80vh;
 }
 
 .edits {
-  flex: auto;
   display: flex;
   flex-direction: column;
   width: 25vw;
-  height: 100px;
+  height: 100%;
   background-color: red;
 }
 
 .grid {
   width: 55vw;
+  height: 100%;
+  padding: 3%;
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-.cols {
-  height: auto;
-  width: 50px;
-  border: 1px solid black;
-}
 .rows {
   border: 1px solid gray;
-  width: 300px;
-  min-height: 20px;
+  width: 100%;
+  height: auto ;
+  flex: 1;
   display: flex;
+  
+}
+
+
+.cols {
+  width: 100%;
+  height: 100%;
+  border: 1px solid white;
+  flex: 1;
 }

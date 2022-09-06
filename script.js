@@ -20,8 +20,18 @@ function makeCol(colNum) {
   }
 }
 
-makeRow(16);
-makeCol(16);
+let sizeSlider = document.getElementById("sizeSlider");
+let sizeValue = document.getElementById("sizeValue");
 
-console.log(rows.length);
-console.log(cols.length);
+sizeSlider.onmousemove = (e) => updateSizeValue(e.target.value);
+sizeSlider.onchange = (e) => changeSize(e.target.value);
+
+function updateSizeValue(value) {
+  sizeValue.innerHTML = `${value} X ${value}`;
+}
+
+function changeSize(value) {
+  myGrid.innerHTML = "";
+  makeRow(value);
+  makeCol(value);
+}
