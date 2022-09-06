@@ -20,8 +20,17 @@ body {
 }
 
 .grid {
-  flex: auto;
-  background-color: blue;
-  height: 100px;
   width: 55vw;
+}
+
+.cols {
+  height: auto;
+  width: 50px;
+  border: 1px solid black;
+}
+.rows {
+  border: 1px solid gray;
+  width: 300px;
+  min-height: 20px;
+  display: flex;
 }
